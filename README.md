@@ -1,12 +1,12 @@
 The **WebGL Globe** is an open platform for geographic data visualization created by the Google Data Arts Team. We encourage you to copy the code, add your own data, and create your own globes.
 
-Check out the examples at http://www.chromeexperiments.com/globe, and if you create a globe, please [share it with us](http://www.chromeexperiments.com/globe-submit). We post our favorite globes publicly.
+Check out the examples at http://www.chromeexperiments.com/globe, and if you create a globe, please [share it with us](http://www.chromeexperiments.com/submit). We post our favorite globes publicly.
 
 ![](http://4.bp.blogspot.com/-nB6XnTgb4AA/TcLQ4gRBtfI/AAAAAAAAH-U/vb2GuhPN6aM/globe.png)
 
 ----
 
-**The WebGL Globe** supports data in `JSON` format, a sample of which you can find [here](http://code.google.com/p/webgl-globe/source/browse/globe/population909500.json). `webgl-globe` makes heavy use of the [Three.js library](https://github.com/mrdoob/three.js/).
+**The WebGL Globe** supports data in `JSON` format, a sample of which you can find [here](https://github.com/dataarts/webgl-globe/blob/master/globe/population909500.json). `webgl-globe` makes heavy use of the [Three.js library](https://github.com/mrdoob/three.js/).
 
 # Data Format
 
@@ -51,7 +51,7 @@ xhr.onreadystatechange = function() {
 
         // Tell the globe about your JSON data
         for ( var i = 0; i < data.length; i ++ ) {
-            globe.addData( data[i][1], 'magnitude', data[i][0] );
+            globe.addData( data[i][1], {format: 'magnitude', name: data[i][0]} );
         }
 
         // Create the geometry
